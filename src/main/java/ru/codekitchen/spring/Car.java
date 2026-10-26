@@ -2,7 +2,7 @@ package ru.codekitchen.spring;
 
 import org.springframework.stereotype.Component;
 
-
+@Component
 public class Car implements Vehicle {
 
 

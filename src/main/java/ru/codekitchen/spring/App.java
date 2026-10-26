@@ -11,6 +11,9 @@ public class App {
         person.startVehicleEngine();
 
 
+        Parking parking = context.getBean("parking", Parking.class);
+        System.out.println(parking.getVehicleList());
+        System.out.println(parking.getVehiclesMap());
 
         context.close();
 
