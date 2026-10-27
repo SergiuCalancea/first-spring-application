@@ -2,7 +2,7 @@ package ru.codekitchen.spring;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.codekitchen.spring.config.ApplicationConfiguration;
+
 
 
 
@@ -11,9 +11,10 @@ public class App {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 
-        Person person = context.getBean("person", Person.class);
-        person.startVehicleEngine();
-        person.callPat();
+        DatabaseConnector connector = context.getBean("databaseConnector", DatabaseConnector.class);
+
+        connector.executeSql("SELECT * FROM students");
+
         context.close();
 
 
