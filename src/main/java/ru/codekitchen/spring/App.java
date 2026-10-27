@@ -1,19 +1,19 @@
 package ru.codekitchen.spring;
 
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.codekitchen.spring.config.VehicleConfiguration;
+import ru.codekitchen.spring.config.ApplicationConfiguration;
+
+
 
 public class App {
     public static void main( String[] args ) {
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(VehicleConfiguration.class);
+                new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 
-        Vehicle vehicle1 = context.getBean("car", Vehicle.class);
-        Vehicle vehicle2 = context.getBean("car", Vehicle.class);
-
-        System.out.println("vehicle1 == vehicle2? Answer: " + (vehicle1 == vehicle2));
-        System.out.println("vehicle1 memory address:" + vehicle1);
-        System.out.println("vehicle2 memory address:" + vehicle2);
+        Person person = context.getBean("person", Person.class);
+        person.startVehicleEngine();
+        person.callPat();
         context.close();
 
 

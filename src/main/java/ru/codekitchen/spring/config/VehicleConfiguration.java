@@ -1,9 +1,9 @@
 package ru.codekitchen.spring.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.codekitchen.spring.Car;
-import ru.codekitchen.spring.Motorbike;
+import ru.codekitchen.spring.*;
 
 @Configuration
 public class VehicleConfiguration {
@@ -16,5 +16,10 @@ public class VehicleConfiguration {
     @Bean
     public Car car() {
         return new Car();
+    }
+
+    @Bean
+    public Person person(@Qualifier("motorbike") Vehicle vehicle, Dog dog) {
+        return new Person(vehicle, dog);
     }
 }

@@ -10,6 +10,6 @@ public class Car implements Vehicle {
 
     @Override
     public void startEngine() {
-        System.out.println("Car : wrooom-wrooom!");
+        System.out.println("Car : start!");
     }
 }
