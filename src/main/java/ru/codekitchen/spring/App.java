@@ -3,9 +3,6 @@ package ru.codekitchen.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-
-
-
 public class App {
     public static void main( String[] args ) {
         AnnotationConfigApplicationContext context =
@@ -16,8 +13,6 @@ public class App {
         connector.executeSql("SELECT * FROM students");
 
         context.close();
-
-
 
     }
 }
